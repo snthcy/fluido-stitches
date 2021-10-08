@@ -1,22 +1,16 @@
-import { limit, orderBy, where } from '@firebase/firestore'
+import { usePosts } from '@contents/posts'
 import { PostsRoute } from '@routes/posts-route'
-import type { GetStaticProps } from 'next'
-import { getStaticPosts, usePosts } from 'src/contents/posts'
+import { getStaticContents } from '@services/contents'
+import { GetStaticProps } from 'next'
 
 export default function PostPage() {
-  const posts = usePosts(
-    where('published', '==', 'true'),
-    limit(10),
-    orderBy('createdAt', 'desc'),
-  )
+  const posts = usePosts()
 
   return <PostsRoute posts={posts} />
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const posts = await getStaticPosts((col) =>
-    col.where('published', '==', 'true').limit(10).orderBy('createdAt', 'desc'),
-  )
+  const posts = await getStaticContents('posts', (col) => col.limit(10))
 
   return {
     props: {

@@ -1,7 +1,10 @@
-import firebaseConfig from '@config/firebase-client.json'
 import { getFirestore } from '@firebase/firestore'
 import { FirebaseApp, initializeApp } from 'firebase/app'
 import { createContext, useContext, useMemo } from 'react'
+
+const firebaseConfig: TypedMap = JSON.parse(
+  process.env.NEXT_PUBLIC_FIREBASE_KEY_CLIENT || '{}',
+)
 
 const FirebaseContext = createContext<FirebaseApp | null>(null)
 

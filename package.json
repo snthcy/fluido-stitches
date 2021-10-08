@@ -6,19 +6,24 @@
     "start": "next start"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.4",
+    "@stitches/react": "^1.2.5",
+    "@tiptap/react": "^2.0.0-beta.79",
+    "@tiptap/starter-kit": "^2.0.0-beta.118",
+    "@types/uuid": "^8.3.1",
     "@vulppi/react-use-firebase": "^0.0.2",
-    "firebase": "^9.1.1",
+    "firebase": "^9.1.2",
     "firebase-admin": "^9.12.0",
     "framer-motion": "^4.1.17",
     "motion": "^10.2.1",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
     "react-datetime": "^3.1.1",
     "react-dom": "^17.0.2",
-    "react-tinacms-editor": "^0.43.3",
-    "tinacms": "^0.43.3"
+    "react-icons": "^4.3.1",
+    "tinacms": "^0.43.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/firebase": "^3.2.1",

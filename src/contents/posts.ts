@@ -7,29 +7,26 @@ export interface PostProps {
   body: string
 }
 
-export const {
-  getStaticList: getStaticPosts,
-  getStaticSingle: getStaticPost,
-  useList: usePosts,
-  useSingle: usePost,
-} = createCollection<PostProps>({
-  name: 'posts',
-  fields: [
-    {
-      component: 'text',
-      name: 'title',
-      label: 'Titulo',
-      placeholder: 'Titulo da publicação',
-      description: 'Serve para bla bla',
-    },
-    {
-      component: 'toggle',
-      name: 'published',
-      toggleLabels: {
-        true: 'Publicado',
-        false: 'Rascunho',
+export const { useList: usePosts, useSingle: usePost } =
+  createCollection<PostProps>({
+    name: 'posts',
+    fields: [
+      {
+        component: 'text',
+        name: 'title',
+        label: 'Titulo',
+        placeholder: 'Titulo da publicação',
+        description: 'Serve para bla bla',
       },
-    },
-    { component: 'markdown', name: 'body', label: 'Conteudo' },
-  ],
-})
+      { component: 'richtext', name: 'body', label: 'Conteudo' },
+      {
+        component: 'toggle',
+        name: 'published',
+        label: 'Estado',
+        toggleLabels: {
+          true: 'Publicado',
+          false: 'Rascunho',
+        },
+      },
+    ],
+  })

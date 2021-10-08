@@ -123,11 +123,8 @@ interface DateField extends GenericField {
   dateFormat?: boolean | string
   timeFormat?: boolean | string
 }
-interface MarkdownField extends GenericField {
-  component: 'markdown'
-}
-interface HTMLField extends GenericField {
-  component: 'html'
+interface RichTextField extends GenericField {
+  component: 'richtext'
 }
 
 declare type CollectionField =
@@ -145,8 +142,7 @@ declare type CollectionField =
   | GroupListField
   | BlocksField
   | DateField
-  | MarkdownField
-  | HTMLField
+  | RichTextField
 
 declare interface CustomField extends GenericField {
   __type: 'field'
